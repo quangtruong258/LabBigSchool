@@ -1,15 +1,73 @@
-﻿@model IEnumerable<LabBigSchool.Models.Course>
+﻿@model LabBigSchool.ViewModel.CoursesViewModel
 @{
     ViewBag.Title = "Home Page";
 }
-<div class="row">
-    <ul>
-        @foreach (var item in Model)
-        {
-            <li>
-                @item.datetime - @item.Lecturer.Name
-            </li>
-        }
+<ul class="course">
+    @foreach (var item in Model.UpcomingCourse)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @item.datetime.ToString("MM")
+                </div>
+                <div class="day">
+                    @item.datetime.ToString("dd")
+                </div>
+            </div>
+            <div class="details">
+                <span class="lecturer">
+                    @item.Lecturer.Name
+                    @if (Model.ShowAction)
+                    {
+                        <button data-user-id="@item.LecturerID" class="btn btn-default btn-sm js-toogle-follow"></button>
+                    }
 
-    </ul>
-</div>
+                </span>
+                <span class="category">
+                    @item.category.Name
+                </span>
+                @if (Model.ShowAction)
+                {
+                    <button data-course-id="@item.ID" class="btn btn-default btn-sm js-toogle-attendance">Going?</button>
+                }
+
+            </div>
+
+        </li>
+    }
+</ul>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-toogle-attendance").click(function (e) {
+                var button = $(e.target);
+                $.post("api/attendances", { courseId: button.attr("data-course-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Failed");
+                    });
+            });
+
+            $(".js-toogle-follow").click(function (e) {
+                var button = $(e.target);
+                $.post("api/followings", { followeeId: button.attr("data-user-id") })
+                    .done(function () {
+                        button.text("Follow");
+                    })
+                    .fail(function () {
+                        alert("Failed");
+                    });
+            });
+
+
+
+
+        });
+    </script>
+}

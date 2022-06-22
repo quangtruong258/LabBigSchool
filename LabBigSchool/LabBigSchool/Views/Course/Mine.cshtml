@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LabBigSchool.Models.Course>
+@{
+    ViewBag.Title = "Mine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<ul class="course">
+    @foreach (var item in Model)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @item.datetime.ToString("MM")
+                </div>
+                <div class="day">
+                    @item.datetime.ToString("dd")
+                </div>
+            </div>
+            <div class="details">
+                <span class="lecturer">
+                    @item.Lecturer.Name                  
+                </span>
+                <span class="category">
+                    @item.category.Name
+                </span>               
+            </div>
+            <div class="action">
+                <a href="@Url.Action("Edit", "Course", new { id = item.ID})">Edit</a>
+                <a href="">Delete</a>
+            </div>
+
+        </li>
+    }
+</ul>

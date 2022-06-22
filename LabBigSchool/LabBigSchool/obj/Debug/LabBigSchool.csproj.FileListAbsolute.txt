@@ -111,3 +111,11 @@ C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\obj\Debug\LabBigSchoo
 C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\obj\Debug\LabBigSchool.Migrations.CreateTableCourse.resources
 C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\obj\Debug\LabBigSchool.Migrations.PopulateCategoryTable.resources
 C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\obj\Debug\LabBigSchool.Migrations.AddNameToApplicationUser.resources
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\bin\System.Net.Http.Formatting.dll
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\bin\System.Web.Http.dll
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\bin\System.Web.Http.WebHost.dll
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\bin\System.Net.Http.Formatting.xml
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\bin\System.Web.Http.xml
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\bin\System.Web.Http.WebHost.xml
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\obj\Debug\LabBigSchool.Migrations.AddAttendance.resources
+C:\Users\truon\Desktop\BigSchool\LabBigSchool\LabBigSchool\obj\Debug\LabBigSchool.Migrations.AddFollowings.resources

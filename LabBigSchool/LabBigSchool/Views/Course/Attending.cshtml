@@ -1,0 +1,43 @@
+﻿@model LabBigSchool.ViewModel.CoursesViewModel
+
+
+@{
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="course">
+    @foreach (var item in Model.UpcomingCourse)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @item.datetime.ToString("MM")
+                </div>
+                <div class="day">
+                    @item.datetime.ToString("dd")
+                </div>
+            </div>
+            <div class="details">
+                <span class="lecturer">
+                    @item.Lecturer.Name
+                    @if (Model.ShowAction)
+                    {
+                        <button data-user-id="@item.LecturerID" class="btn btn-default btn-sm js-toogle-follow"></button>
+                    }
+
+                </span>
+                <span class="category">
+                    @item.category.Name
+                </span>
+                @if (Model.ShowAction)
+                {
+                    <button data-course-id="@item.ID" class="btn btn-default btn-sm js-toogle-attendance">Going?</button>
+                }
+
+            </div>
+
+        </li>
+    }
+</ul>
+
